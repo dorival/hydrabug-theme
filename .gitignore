@@ -1,0 +1,4 @@
+/wp-content/**
+!/wp-content/themes/
+!/wp-content/themes/hydrabug/
+!/wp-content/themes/hydrabug/**
