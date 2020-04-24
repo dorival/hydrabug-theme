@@ -1,0 +1,69 @@
+.hb-list {
+  .post {
+    display: grid;
+    gap: 0px 25px;
+    grid-template-columns: 260px auto;
+    grid-template-rows: auto auto 50px;
+    grid-template-areas: 
+      "post-thumbnail post-header"
+      "post-thumbnail post-summary"
+      "post-thumbnail post-footer";
+
+    margin: 0 0 $size__site-gutter;
+    background-color: $color__container;
+    height: 260px;
+    overflow: hidden;
+
+    header {
+      grid-area: post-header;
+      
+      .entry-title {
+        margin: 25px 25px 10px 0;
+        font-size: 1.9em;
+        line-height: 1em;
+      }
+      .entry-meta {
+        font-family: $font__secondary;
+        font-size: 0.8em;
+
+        a {
+          font-weight: 700;
+        }
+      }
+    }
+
+    .post-thumbnail {
+      background-position: center center;
+      background-color: #d4433b;
+      grid-area: post-thumbnail;
+      height: 260px;
+      width: 260px;
+
+      .post-thumbnail-decal {
+        background-image: url(assets/featured.png);
+        background-position: right;
+        background-repeat: no-repeat;
+        pointer-events: none;
+        position: absolute;
+        display: block;
+        height: 260px;
+        width: 260px;
+      }
+    }
+
+    .entry-content {
+      grid-area: post-summary;
+      font-family: $font__secondary;
+      margin: 0 25px 0 0;
+    }
+
+    .entry-content > * {
+      margin: 0;
+    }
+
+    footer {
+      grid-area: post-footer;
+      margin: 0 25px 0 0;
+    }
+  }
+}

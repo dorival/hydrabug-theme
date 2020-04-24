@@ -1,0 +1,15 @@
+footer.site-footer {
+ background-color: $color__header-footer;
+
+ .site-info {
+  margin: 0 auto;
+  max-width: $size__site-maxwidth;
+  padding: 25px;
+  color: #fff;
+
+  .sep {
+    display: inline;
+    margin: 0 10px;
+  }
+ }
+}

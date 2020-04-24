@@ -23,9 +23,9 @@ function hydrabug_custom_header_setup() {
 			'hydrabug_custom_header_args',
 			array(
 				'default-image'      => '',
-				'default-text-color' => '000000',
-				'width'              => 1000,
-				'height'             => 250,
+				'default-text-color' => 'FFFFFF',
+				'width'              => 179,
+				'height'             => 161,
 				'flex-height'        => true,
 				'wp-head-callback'   => 'hydrabug_header_style',
 			)

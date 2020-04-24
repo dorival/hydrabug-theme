@@ -1,27 +1,49 @@
-.site {
-	display: grid;
-	grid-template-columns: auto ($size__site-sidebar);
-	grid-template-areas:
-		"header header"
-		"main sidebar"
-		"footer footer";
-}
-
-.site-header {
-	grid-area: header;
-}
 
 .site-main {
-	grid-area: main;
-	overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
+	display: flex;
+	margin: 0 auto;
+	max-width: $size__site-maxwidth;
+	padding: $size__site-padding;
+
+	> .content {
+		flex: 1;
+		overflow: hidden;  /* TODO: REMOVE */
+		margin-right: $size__site-gutter;
+	}
+
+	> .widget-area {
+		flex: none;
+		width: 250px;
+	}
 }
 
-.widget-area {
-	grid-area: sidebar;
-}
 
-.site-footer {
-	grid-area: footer;
-}
 
-@import "no-sidebar";
+
+// .site {
+// 	display: grid;
+// 	grid-template-columns: auto ($size__site-sidebar);
+// 	grid-template-areas:
+// 		"header header"
+// 		"main sidebar"
+// 		"footer footer";
+// }
+
+// .site-header {
+// 	grid-area: header;
+// }
+
+// .site-main {
+// 	grid-area: main;
+// 	overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
+// }
+
+// .widget-area {
+// 	grid-area: sidebar;
+// }
+
+// .site-footer {
+// 	grid-area: footer;
+// }
+
+// @import "no-sidebar";

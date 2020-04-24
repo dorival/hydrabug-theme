@@ -27,8 +27,7 @@ if ( ! function_exists( 'hydrabug_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'hydrabug' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			esc_html_x( 'Posted on %s', 'post date', 'hydrabug' ), $time_string
 		);
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -120,7 +119,25 @@ if ( ! function_exists( 'hydrabug_post_thumbnail' ) ) :
 	 * element when on single views.
 	 */
 	function hydrabug_post_thumbnail() {
-		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+		if ( is_attachment() ) {
+			return;
+		}
+
+		if (post_password_required()) {
+			?>
+			<div class="post-thumbnail no-thumbnail password-protected">
+				<div class="post-thumbnail-decal"></div>
+			</div>
+			<?php
+			return;
+		}
+
+		if (! has_post_thumbnail()) {
+			?>
+			<div class="post-thumbnail no-thumbnail">
+				<div class="post-thumbnail-decal"></div>
+			</div>
+			<?php
 			return;
 		}
 
@@ -128,30 +145,32 @@ if ( ! function_exists( 'hydrabug_post_thumbnail' ) ) :
 			?>
 
 			<div class="post-thumbnail">
+				<div class="post-thumbnail-decal"></div>
 				<?php the_post_thumbnail(); ?>
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>
 
-			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-				<?php
-					the_post_thumbnail(
-						'post-thumbnail',
-						array(
-							'alt' => the_title_attribute(
-								array(
-									'echo' => false,
-								)
-							),
-						)
-					);
-				?>
+			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true"
+				tabindex="-1" style="background-image:url(<?php echo get_the_post_thumbnail_url(); ?>)">
+				<div class="post-thumbnail-decal"></div>
 			</a>
 
 			<?php
 		endif; // End is_singular().
 	}
 endif;
+
+// the_post_thumbnail(
+// 	'post-thumbnail',
+// 	array(
+// 		'alt' => the_title_attribute(
+// 			array(
+// 				'echo' => false,
+// 			)
+// 		),
+// 	)
+// );
 
 if ( ! function_exists( 'wp_body_open' ) ) :
 	/**

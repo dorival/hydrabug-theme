@@ -1,6 +1,6 @@
 /*!
 Theme Name: HydraBug
-Theme URI: http://underscores.me/
+Theme URI: https://hydrabug.dev/
 Author: Dorival Neto
 Author URI: https://github.com/dorival
 Description: HydraBug.dev Blog Theme
@@ -98,3 +98,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Media
 --------------------------------------------------------------*/
 @import "media/media";
+
+/*--------------------------------------------------------------
+# Speciality
+--------------------------------------------------------------*/
+@import "modules/article-row";
