@@ -948,6 +948,7 @@ object {
       flex-wrap: wrap; }
     .hb-list .post footer .cat-img, .hb-list .post footer .tag-img, .hb-list .post footer .comment-img {
       background-image: url(assets/cat.svg);
+      opacity: 0.6;
       display: inline-block;
       width: 24px;
       height: 24px; }
@@ -955,5 +956,6 @@ object {
       background-image: url(assets/tag.svg); }
     .hb-list .post footer .comment-img {
       background-image: url(assets/comment.svg);
+      opacity: 0.4;
       width: 23px;
       height: 23px; }

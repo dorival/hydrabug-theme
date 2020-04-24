@@ -80,6 +80,7 @@
 
       .cat-img, .tag-img, .comment-img  {
         background-image: url(assets/cat.svg);
+        opacity: 0.6;
         display: inline-block;
         width: 24px;
         height: 24px;
@@ -91,6 +92,7 @@
 
       .comment-img {
         background-image: url(assets/comment.svg);
+        opacity: 0.4;
         width: 23px;
         height: 23px;
       }
