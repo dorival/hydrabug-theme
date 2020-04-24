@@ -936,4 +936,24 @@ object {
     margin: 0; }
   .hb-list .post footer {
     grid-area: post-footer;
-    margin: 0 25px 0 0; }
+    margin: 0 25px 0 0;
+    display: flex;
+    align-items: center; }
+    .hb-list .post footer a {
+      text-decoration: none; }
+    .hb-list .post footer .cat-links, .hb-list .post footer .tags-links, .hb-list .post footer .comments-link {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+      flex-wrap: wrap; }
+    .hb-list .post footer .cat-img, .hb-list .post footer .tag-img, .hb-list .post footer .comment-img {
+      background-image: url(assets/cat.svg);
+      display: inline-block;
+      width: 24px;
+      height: 24px; }
+    .hb-list .post footer .tag-img {
+      background-image: url(assets/tag.svg); }
+    .hb-list .post footer .comment-img {
+      background-image: url(assets/comment.svg);
+      width: 23px;
+      height: 23px; }

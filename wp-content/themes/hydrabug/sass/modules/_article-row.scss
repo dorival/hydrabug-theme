@@ -64,6 +64,36 @@
     footer {
       grid-area: post-footer;
       margin: 0 25px 0 0;
+      display: flex;
+      align-items: center;
+
+      a {
+        text-decoration: none;
+      }
+
+      .cat-links, .tags-links, .comments-link {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        flex-wrap: wrap;
+      }
+
+      .cat-img, .tag-img, .comment-img  {
+        background-image: url(assets/cat.svg);
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+      }
+
+      .tag-img {
+        background-image: url(assets/tag.svg);
+      }
+
+      .comment-img {
+        background-image: url(assets/comment.svg);
+        width: 23px;
+        height: 23px;
+      }
     }
   }
 }

@@ -59,22 +59,22 @@ if ( ! function_exists( 'hydrabug_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'hydrabug' ) );
+			$categories_list = get_the_category_list( esc_html__( ',&nbsp;', 'hydrabug' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'hydrabug' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<div class="cat-links"><div class="cat-img" title="' . esc_html__( 'Posted in', 'hydrabug' ) . '"></div>'. $categories_list .'</div>' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'hydrabug' ) );
+			$tags_list = get_the_tag_list( '', esc_html_x( ',&nbsp;', 'list item separator', 'hydrabug' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'hydrabug' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<div class="tags-links"><div class="tag-img" title="' . esc_html__( 'Tagged', 'hydrabug' ) . '"></div>'. $tags_list .'</div>' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
+			echo '<span class="comments-link"><div class="comment-img"></div>';
 			comments_popup_link(
 				sprintf(
 					wp_kses(
