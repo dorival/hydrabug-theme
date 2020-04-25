@@ -130,8 +130,8 @@ function hydrabug_widgets_init() {
 			'name'          => esc_html__( 'Sidebar', 'hydrabug' ),
 			'id'            => 'sidebar-1',
 			'description'   => esc_html__( 'Add widgets here.', 'hydrabug' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
+			'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="slant"></div><div class="widget-content">',
+			'after_widget'  => '</div></section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 		)

@@ -34,7 +34,7 @@
 
     .post-thumbnail {
       background-position: center center;
-      background-color: #d4433b;
+      background-color: #efefef;
       grid-area: post-thumbnail;
       height: 260px;
       width: 260px;
@@ -47,7 +47,8 @@
         position: absolute;
         display: block;
         height: 260px;
-        width: 260px;
+        width: 15px;
+        margin-left: 245px;
       }
     }
 
@@ -95,6 +96,9 @@
         opacity: 0.4;
         width: 23px;
         height: 23px;
+        background-repeat: no-repeat;
+        background-position: 4px 6px;
+        background-size: 15px;
       }
     }
   }

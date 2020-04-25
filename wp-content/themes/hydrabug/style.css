@@ -405,27 +405,6 @@ hr {
   height: 1px;
   margin-bottom: 1.5em; }
 
-ul,
-ol {
-  margin: 0 0 1.5em 3em; }
-
-ul {
-  list-style: disc; }
-
-ol {
-  list-style: decimal; }
-
-li > ul,
-li > ol {
-  margin-bottom: 0;
-  margin-left: 1.5em; }
-
-dt {
-  font-weight: 700; }
-
-dd {
-  margin: 0 1.5em 1.5em; }
-
 img {
   height: auto;
   max-width: 100%; }
@@ -756,10 +735,61 @@ h1 > a, h2 > a {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-.widget {
-  margin: 0 0 1.5em; }
-  .widget select {
-    max-width: 100%; }
+.widget-area {
+  width: 250px; }
+  .widget-area > section {
+    width: 100%;
+    margin: 0 0 1.5em;
+    background-color: #e5e5e5;
+    /* Generate your own clip-path here: https://bennettfeely.com/clippy/ */ }
+    .widget-area > section > .slant {
+      clip-path: polygon(0 0, 100% 0, 100% 88%, 83% 64%, 63% 88%, 47% 22%, 19% 85%, 0 47%);
+      background-color: #f7f7f7;
+      width: 250px;
+      height: 10px; }
+    .widget-area > section .widget-content {
+      padding: 15px;
+      /* Avoid drop-downs going over the edge */ }
+      .widget-area > section .widget-content h2 {
+        margin: 0;
+        text-align: center;
+        font-size: 1.2em; }
+      .widget-area > section .widget-content select {
+        max-width: 100%;
+        width: 100%; }
+    .widget-area > section.widget_categories ul {
+      list-style-type: none;
+      padding: 0; }
+      .widget-area > section.widget_categories ul li {
+        background-image: url("assets/cat.svg");
+        background-repeat: no-repeat;
+        background-position: left center;
+        padding: 5px 0 5px 25px; }
+    .widget-area > section.widget_archive ul {
+      list-style-type: none;
+      padding: 0; }
+      .widget-area > section.widget_archive ul li {
+        background-image: url("assets/archive.svg");
+        background-repeat: no-repeat;
+        background-position: left center;
+        padding: 5px 0 5px 25px; }
+    .widget-area > section.widget_recent_comments ul {
+      list-style-type: none;
+      padding: 0; }
+      .widget-area > section.widget_recent_comments ul li {
+        background-image: url("assets/comment.svg");
+        background-repeat: no-repeat;
+        background-position: left center;
+        padding: 5px 0 5px 25px;
+        background-size: 15px; }
+    .widget-area > section.widget_recent_entries ul {
+      list-style-type: none;
+      padding: 0; }
+      .widget-area > section.widget_recent_entries ul li {
+        background-image: url("assets/post.svg");
+        background-repeat: no-repeat;
+        background-position: left center;
+        padding: 5px 0 5px 25px; }
 
 /*--------------------------------------------------------------
 # Content
@@ -915,7 +945,7 @@ object {
         font-weight: 700; }
   .hb-list .post .post-thumbnail {
     background-position: center center;
-    background-color: #d4433b;
+    background-color: #efefef;
     grid-area: post-thumbnail;
     height: 260px;
     width: 260px; }
@@ -927,7 +957,8 @@ object {
       position: absolute;
       display: block;
       height: 260px;
-      width: 260px; }
+      width: 15px;
+      margin-left: 245px; }
   .hb-list .post .entry-content {
     grid-area: post-summary;
     font-family: "Noto Serif", serif;
@@ -958,4 +989,7 @@ object {
       background-image: url(assets/comment.svg);
       opacity: 0.4;
       width: 23px;
-      height: 23px; }
+      height: 23px;
+      background-repeat: no-repeat;
+      background-position: 4px 6px;
+      background-size: 15px; }

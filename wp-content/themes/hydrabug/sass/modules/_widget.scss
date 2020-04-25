@@ -1,0 +1,84 @@
+$widget-width: 250px;
+
+@mixin image-bullet($imagePath) {
+  background-image: url($imagePath);
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding: 5px 0 5px 25px;
+}
+
+.widget-area {
+  width: $widget-width;
+
+  > section {
+    width: 100%;
+    margin: 0 0 1.5em;
+    background-color: $color__container;
+
+    /* Generate your own clip-path here: https://bennettfeely.com/clippy/ */
+    > .slant {
+      clip-path: polygon(0 0, 100% 0, 100% 88%, 83% 64%, 63% 88%, 47% 22%, 19% 85%, 0 47%);
+      background-color: $color__background-body;
+      width: $widget-width;
+      height: 10px;
+    }
+
+    .widget-content {
+      padding: 15px;
+
+      h2 {
+        margin: 0;
+        text-align: center;
+        font-size: 1.2em;
+      }
+
+      /* Avoid drop-downs going over the edge */
+      select {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+
+    &.widget_categories {
+      ul {
+        list-style-type: none;
+        padding: 0;
+        li {
+          @include image-bullet('assets/cat.svg');
+        }
+      }
+    }
+
+    &.widget_archive {
+      ul {
+        list-style-type: none;
+        padding: 0;
+        li {
+          @include image-bullet('assets/archive.svg');
+        }
+      }
+    }
+
+    &.widget_recent_comments {
+      ul {
+        list-style-type: none;
+        padding: 0;
+        li {
+          @include image-bullet('assets/comment.svg');
+          background-size: 15px;
+        }
+      }
+    }
+
+    &.widget_recent_entries {
+      ul {
+        list-style-type: none;
+        padding: 0;
+        li {
+          @include image-bullet('assets/post.svg');
+        }
+      }
+    }
+
+  }
+}
