@@ -895,6 +895,38 @@ h1 > a, h2 > a {
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
+.comments-area {
+  margin-top: 1.5em;
+  width: 100%; }
+  .comments-area ol {
+    list-style: none;
+    padding-inline-start: 0;
+    margin: 0; }
+    .comments-area ol.children {
+      margin-left: 15px; }
+    .comments-area ol li {
+      background: rgba(0, 0, 0, 0.05);
+      margin: 1em 0;
+      padding: 15px; }
+  .comments-area .comment-meta {
+    display: flex;
+    align-items: center; }
+  .comments-area .comment-author {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: 300;
+    font-style: italic; }
+    .comments-area .comment-author img {
+      margin-right: 15px; }
+    .comments-area .comment-author .says {
+      margin-left: 5px; }
+  .comments-area .comment-metadata {
+    font-size: 1em; }
+  .comments-area .edit-link {
+    padding-left: 5px; }
+
 .comment-content a {
   word-wrap: break-word; }
 
