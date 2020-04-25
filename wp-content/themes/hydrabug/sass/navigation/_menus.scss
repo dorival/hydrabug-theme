@@ -48,7 +48,7 @@
 				width: 200px;
 				color: #fff;
 				text-decoration: none;
-				font-family: 400;
+				white-space: normal;
 			}
 
 			:hover > a,
@@ -139,15 +139,21 @@
 	}
 
 	.nav-links {
+		@include serif-mix();
 		display: flex;
-	}
+		font-style: italic;
 
-	.nav-previous {
-		flex: 1 0 50%;
-	}
+		.nav-previous {
+			flex: 1 0 50%;
+		}
+	
+		.nav-next {
+			text-align: end;
+			flex: 1 0 50%;
+		}
 
-	.nav-next {
-		text-align: end;
-		flex: 1 0 50%;
+		.nav-subtitle {
+			font-weight: 700;
+		}
 	}
 }

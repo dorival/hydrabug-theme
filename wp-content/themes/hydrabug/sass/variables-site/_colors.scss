@@ -1,7 +1,33 @@
-$color__background-body: #f7f7f7;
-$color__background-screen: #fff;
+/*--------------------------------------------------------------
+# BASE COLOURS
+--------------------------------------------------------------*/
+
+// PRIMARY
+$color-primary: #e5e5e5;
+$color-primary-light: #efefef;
+$color-primary-dark: #babdbe;
+$color-primary-text: #303030;   // $color__text-main    $color__header-footer
+
+// ACCENT
+$color-accent: #d50000;
+$color-accent-light: #ff5131;
+$color-accent-dark: #9b0000;
+$color-accent-text: #fff;
+
+// PRIMARY REVERSE
+$color-reverse: #303030;
+$color-reverse-light: #595959;
+$color-reverse-dark: #303030;
+$color-reverse-text: #eceff1;
+
+// OTHER
+$color-body: #f7f7f7;
+$color-screen: #fff;
+
+// ------------------------- Roll out this
+
+
 $color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
@@ -16,7 +42,6 @@ $color__link: #b8312a;
 $color__link-visited: #b8312a;
 $color__link-hover: #d73d35;
 
-$color__container: #e5e5e5;
 
 $color__text-main: #303030;
 $color__header-footer: #303030;

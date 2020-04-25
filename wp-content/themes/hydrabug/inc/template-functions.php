@@ -50,3 +50,11 @@ function themeslug_enqueue_script() {
 	// wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.custom.js', false, '2.6.2' );
 }
 add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_script' );
+
+
+
+function remove_width_attribute( $html ) {
+	$html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
+	return $html;
+}
+add_filter( 'post_thumbnail_html', 'remove_width_attribute', 10 );

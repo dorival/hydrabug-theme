@@ -1,3 +1,30 @@
+/*--------------------------------------------------------------
+# Base Typography
+--------------------------------------------------------------*/
+
+/* Fonts are Serif and Sans-Serif */
+$font-sans-serif: 'Lato', sans-serif;
+$font-serif: 'Noto Serif', serif;
+$font-code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+
+@mixin sans-serif-mix() {
+  font-family: $font-sans-serif;
+  line-height: 1.5;
+}
+
+@mixin serif-mix() {
+  font-family: $font-serif;
+  color: $color-primary-text;
+  line-height: 1.5;
+}
+
+@mixin code-mix {
+  font-family: $font-code;
+  color: $color-primary-text;
+  line-height: 1.6;
+}
+
+// TO REMOVE
 $font__main: 'Lato', sans-serif;
 $font__secondary: 'Noto Serif', serif;
 $font__code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;

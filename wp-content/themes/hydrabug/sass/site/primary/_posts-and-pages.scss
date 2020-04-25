@@ -1,23 +1,76 @@
 .sticky {
-	display: block;
+  display: block;
 }
 
-.post,
-.page {
-	margin: 0 0 1.5em;
-}
+.hb-single {
+	
+  .post,
+  .page {
+    margin: 0 0 1.5em;
 
+    .entry-title {
+      margin: 0;
+    }
+    .entry-meta {
+      @include serif-mix();
+      font-style: italic;
+      font-size: 0.8em;
+    }
+
+    .post-thumbnail {
+      margin-top: 1.5em;
+
+      img {
+        object-fit: cover;
+        height: 250px;
+        width: 100%;
+      }
+    }
+
+    .entry-footer {
+      .cat-links,
+      .tags-links {
+        color: #fff;
+
+        > a {
+          background-image: url(assets/cat.svg);
+          background-color: $color-primary;
+          padding: 3px 5px 3px 23px;
+          background-repeat: no-repeat;
+          text-decoration: none;
+          white-space: nowrap;
+          background-position: left center;
+          display: inline-block;
+          margin: 3px 0;
+          color: $color-primary-text;
+        }
+
+        > a:hover {
+          background-color: $color-accent;
+          color: $color-accent-text;
+        }
+      }
+
+      .tags-links {
+        > a {
+          background-image: url(assets/tag.svg);
+        }
+      }
+    }
+  }
+}
 .updated:not(.published) {
-	display: none;
+  display: none;
 }
 
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+  @include serif-mix();
+  margin-top: 1.5em;
 }
 
 .page-links {
-	clear: both;
-	margin: 0 0 1.5em;
+  clear: both;
+  margin: 0 0 1.5em;
 }

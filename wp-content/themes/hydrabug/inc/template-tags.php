@@ -146,7 +146,7 @@ if ( ! function_exists( 'hydrabug_post_thumbnail' ) ) :
 
 			<div class="post-thumbnail">
 				<div class="post-thumbnail-decal"></div>
-				<?php the_post_thumbnail(); ?>
+				<?php the_post_thumbnail('full', array( 'width' => '100%', 'height' => '250px' )); ?>
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>

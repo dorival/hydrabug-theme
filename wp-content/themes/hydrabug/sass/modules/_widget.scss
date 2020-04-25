@@ -13,12 +13,12 @@ $widget-width: 250px;
   > section {
     width: 100%;
     margin: 0 0 1.5em;
-    background-color: $color__container;
+    background-color: $color-primary;
 
     /* Generate your own clip-path here: https://bennettfeely.com/clippy/ */
     > .slant {
       clip-path: polygon(0 0, 100% 0, 100% 88%, 83% 64%, 63% 88%, 47% 22%, 19% 85%, 0 47%);
-      background-color: $color__background-body;
+      background-color: $color-body;
       width: $widget-width;
       height: 10px;
     }

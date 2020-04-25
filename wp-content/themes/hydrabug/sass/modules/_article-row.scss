@@ -10,7 +10,7 @@
       "post-thumbnail post-footer";
 
     margin: 0 0 $size__site-gutter;
-    background-color: $color__container;
+    background-color: $color-primary;
     height: 260px;
     overflow: hidden;
 
@@ -23,7 +23,7 @@
         line-height: 1em;
       }
       .entry-meta {
-        font-family: $font__secondary;
+        font-family: $font-sans-serif;
         font-size: 0.8em;
 
         a {
@@ -34,14 +34,15 @@
 
     .post-thumbnail {
       background-position: center center;
-      background-color: #efefef;
+      background-color: $color-primary-light;
       grid-area: post-thumbnail;
       height: 260px;
       width: 260px;
+      margin: 0;
 
       .post-thumbnail-decal {
         clip-path: polygon(0 21%, 100% 0, 100% 100%, 17% 92%, 67% 75%, 0 67%, 65% 41%);
-        background-color: #e5e5e5;
+        background-color: $color-primary;
         pointer-events: none;
         margin-left: 249px;
         position: absolute;
