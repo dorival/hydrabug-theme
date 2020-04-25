@@ -32,6 +32,10 @@ $widget-width: 250px;
         font-size: 1.2em;
       }
 
+      form {
+        margin-top: 15px;
+      }
+
       /* Avoid drop-downs going over the edge */
       select {
         max-width: 100%;
