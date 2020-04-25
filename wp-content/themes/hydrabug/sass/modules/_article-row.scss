@@ -40,15 +40,14 @@
       width: 260px;
 
       .post-thumbnail-decal {
-        background-image: url(assets/featured.png);
-        background-position: right;
-        background-repeat: no-repeat;
+        clip-path: polygon(0 21%, 100% 0, 100% 100%, 17% 92%, 67% 75%, 0 67%, 65% 41%);
+        background-color: #e5e5e5;
         pointer-events: none;
+        margin-left: 249px;
         position: absolute;
         display: block;
         height: 260px;
-        width: 15px;
-        margin-left: 245px;
+        width: 12px;
       }
     }
 
