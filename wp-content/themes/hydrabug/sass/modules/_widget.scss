@@ -84,5 +84,17 @@ $widget-width: 250px;
       }
     }
 
+    &.widget_nav_menu {
+      .menu-social-container {
+        ul {
+          list-style-type: none;
+          padding: 0;
+          li {
+            @include image-bullet('assets/link.svg');
+          }
+        }
+      }
+    }
+
   }
 }

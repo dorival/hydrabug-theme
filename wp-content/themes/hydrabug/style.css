@@ -803,6 +803,14 @@ h1 > a, h2 > a {
         background-repeat: no-repeat;
         background-position: left center;
         padding: 5px 0 5px 25px; }
+    .widget-area > section.widget_nav_menu .menu-social-container ul {
+      list-style-type: none;
+      padding: 0; }
+      .widget-area > section.widget_nav_menu .menu-social-container ul li {
+        background-image: url("assets/link.svg");
+        background-repeat: no-repeat;
+        background-position: left center;
+        padding: 5px 0 5px 25px; }
 
 /*--------------------------------------------------------------
 # Content
@@ -1041,6 +1049,11 @@ object {
     background-position: center center;
     background-color: #efefef;
     grid-area: post-thumbnail;
+    font-size: 10em;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    color: #d6d6d6;
     height: 260px;
     width: 260px;
     margin: 0; }
@@ -1053,6 +1066,11 @@ object {
       display: block;
       height: 260px;
       width: 12px; }
+    .hb-list .post .post-thumbnail.password-protected {
+      background-image: url(assets/secure.svg);
+      background-repeat: no-repeat;
+      background-size: 100px;
+      background-color: #d8d0e0; }
   .hb-list .post .entry-content {
     grid-area: post-summary;
     font-family: "Noto Serif", serif;

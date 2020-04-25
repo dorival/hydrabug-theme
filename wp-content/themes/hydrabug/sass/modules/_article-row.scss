@@ -36,6 +36,11 @@
       background-position: center center;
       background-color: $color-primary-light;
       grid-area: post-thumbnail;
+      font-size: 10em;
+      font-weight: 700;
+      text-decoration: none;
+      text-align: center;
+      color: #d6d6d6;
       height: 260px;
       width: 260px;
       margin: 0;
@@ -49,6 +54,13 @@
         display: block;
         height: 260px;
         width: 12px;
+      }
+
+      &.password-protected {
+        background-image: url(assets/secure.svg);
+        background-repeat: no-repeat;
+        background-size: 100px;
+        background-color: #d8d0e0;
       }
     }
 
@@ -101,5 +113,7 @@
         background-size: 15px;
       }
     }
+
   }
+
 }

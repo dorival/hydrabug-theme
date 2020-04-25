@@ -133,11 +133,28 @@ if ( ! function_exists( 'hydrabug_post_thumbnail' ) ) :
 		}
 
 		if (! has_post_thumbnail()) {
-			?>
-			<div class="post-thumbnail no-thumbnail">
+			$category = get_the_category()[0];
+			if (function_exists('z_taxonomy_image_url')):
+				$categoryUrl = z_taxonomy_image_url($category->term_id);
+		?>
+			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true"
+				tabindex="-1" style="background-image:url(<?php echo $categoryUrl; ?>)">
 				<div class="post-thumbnail-decal"></div>
-			</div>
-			<?php
+				<?php
+					if ($categoryUrl == ""):
+						$c = substr($category->name, 0, 1);
+						echo $c;
+					endif;
+				?>
+			</a>
+		<?php
+			else:
+				?>
+				<div class="post-thumbnail no-thumbnail">
+					<div class="post-thumbnail-decal"></div>
+				</div>
+		<?php
+			endif;
 			return;
 		}
 
@@ -161,16 +178,6 @@ if ( ! function_exists( 'hydrabug_post_thumbnail' ) ) :
 	}
 endif;
 
-// the_post_thumbnail(
-// 	'post-thumbnail',
-// 	array(
-// 		'alt' => the_title_attribute(
-// 			array(
-// 				'echo' => false,
-// 			)
-// 		),
-// 	)
-// );
 
 if ( ! function_exists( 'wp_body_open' ) ) :
 	/**
