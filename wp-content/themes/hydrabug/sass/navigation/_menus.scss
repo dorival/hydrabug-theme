@@ -2,13 +2,9 @@
 	display: block;
 	margin: 0 auto;
 	max-width: $size__site-maxwidth;
-	padding: $size__site-padding;
+	padding: 0 25px 0 25px;
 
 	> div > ul {
-		> li { margin: 0 25px; }
-		> li:first-of-type { margin: 0 25px 0 0; }
-		> li:last-of-type { margin: 0 0 0 25px; }
-
 		> li > a, > li > a:visited { color: $color__mainnav-level0; }
 		> li > a:hover {
 			color: $color__mainnav-level0-hover;
@@ -84,6 +80,7 @@
 	a {
 		display: block;
 		text-decoration: none;
+		white-space: nowrap;
 	}
 
 	.current_page_item > a,
@@ -96,7 +93,7 @@
 }
 
 .main-navigation.has-header-image {
-	padding: 0 0 0 225px;
+	padding: 0 25px 0 225px;
 }
 
 /* Small menu. */
@@ -113,7 +110,9 @@
 
 	.main-navigation ul {
 		display: flex;
-		align-items: center;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
 	}
 	.main-navigation ul.children {
 		flex-direction: column;
