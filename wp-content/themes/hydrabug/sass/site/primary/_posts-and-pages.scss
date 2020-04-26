@@ -93,4 +93,26 @@
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
+  display: flex;
+  align-items: center;
+
+  span, a {
+    background-color: $color-primary;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    text-align: center;
+    margin-left: 15px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+  }
+
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    background-color: $color-accent;
+    color: $color-accent-text;
+  }
 }
