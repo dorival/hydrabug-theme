@@ -12,6 +12,7 @@ get_header();
 
 	<main id="primary" class="site-main">
 
+	<div class="content hb-list">
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
@@ -43,9 +44,13 @@ get_header();
 
 		endif;
 		?>
-
-	</main><!-- #main -->
+	</div><!-- #content -->
 
 <?php
-get_sidebar();
+	/* Sidebar */
+	get_sidebar();
+?>
+</main><!-- #main -->
+
+<?php
 get_footer();

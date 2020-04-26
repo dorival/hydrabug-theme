@@ -1,5 +1,5 @@
 .hb-list {
-  .post {
+  > article {
     display: grid;
     gap: 0px 25px;
     grid-template-columns: 260px auto;
