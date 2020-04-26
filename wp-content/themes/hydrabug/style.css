@@ -438,6 +438,34 @@ table {
   table td {
     background-color: #fff; }
 
+.wp-block-embed__wrapper .twitter-tweet {
+  background-color: #e5e5e5;
+  font-style: italic;
+  padding: 1.5em;
+  margin: 1em 1.5em; }
+  .wp-block-embed__wrapper .twitter-tweet > p {
+    font-style: normal;
+    margin-top: 0;
+    background-image: url(assets/twitter.svg);
+    padding-left: 5.5em;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 4.5em; }
+
+.wp-block-embed-spotify {
+  margin: 1em 1.5em; }
+  .wp-block-embed-spotify iframe {
+    height: 80px;
+    width: 100%; }
+
+.wp-block-file {
+  margin: 1em 1.5em;
+  padding: 1.5em;
+  background-color: #e5e5e5; }
+  .wp-block-file .wp-block-file__button {
+    font-family: "Lato", sans-serif;
+    line-height: 1.5; }
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
