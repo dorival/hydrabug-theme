@@ -856,6 +856,9 @@ h1 > a, h2 > a {
       object-fit: cover;
       height: 250px;
       width: 100%; }
+    .hb-single .post .post-thumbnail.no-thumbnail,
+    .hb-single .page .post-thumbnail.no-thumbnail {
+      display: none; }
   .hb-single .post .entry-footer .cat-links,
   .hb-single .post .entry-footer .tags-links,
   .hb-single .page .entry-footer .cat-links,
@@ -893,8 +896,33 @@ h1 > a, h2 > a {
 .entry-summary {
   font-family: "Noto Serif", serif;
   color: #303030;
-  line-height: 1.5;
-  margin-top: 1.5em; }
+  line-height: 1.5; }
+  .page-content h1, .page-content h2, .page-content h3, .page-content h4, .page-content h5, .page-content h6,
+  .entry-content h1,
+  .entry-content h2,
+  .entry-content h3,
+  .entry-content h4,
+  .entry-content h5,
+  .entry-content h6,
+  .entry-summary h1,
+  .entry-summary h2,
+  .entry-summary h3,
+  .entry-summary h4,
+  .entry-summary h5,
+  .entry-summary h6 {
+    font-family: "Noto Serif", serif;
+    color: #303030;
+    line-height: 1.5;
+    font-style: italic; }
+
+.entry-content .post-password-form {
+  padding: 1.5em 1.5em 1.5em 9.5em;
+  background-image: url(assets/secure.svg);
+  background-color: #e5e5e5;
+  background-repeat: no-repeat;
+  background-size: 6em;
+  background-position: 1.5em;
+  margin: 1.5em 0; }
 
 .page-links {
   clear: both;
@@ -940,6 +968,34 @@ h1 > a, h2 > a {
 
 .bypostauthor {
   display: block; }
+
+/*--------------------------------------------------------------
+## 404
+--------------------------------------------------------------*/
+.not-found .page-content {
+  display: grid;
+  margin-bottom: 1.5em;
+  gap: 15px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2em auto 1fr 1fr;
+  grid-template-areas: "description description" "search-form search-form" "recent-posts popular-categories" "archives tag-cloud"; }
+  .not-found .page-content > p {
+    grid-area: description; }
+  .not-found .page-content > .search-form {
+    grid-area: search-form; }
+  .not-found .page-content > .widget_recent_entries {
+    grid-area: recent-posts; }
+  .not-found .page-content > .widget_categories {
+    grid-area: popular-categories; }
+  .not-found .page-content > .widget_archive {
+    grid-area: archives; }
+  .not-found .page-content > .widget_tag_cloud {
+    grid-area: tag-cloud; }
+  .not-found .page-content .widget {
+    background-color: #e5e5e5;
+    padding: 15px; }
+    .not-found .page-content .widget > h2 {
+      margin-top: 0; }
 
 /*--------------------------------------------------------------
 # Infinite scroll
@@ -1024,7 +1080,7 @@ object {
 /*--------------------------------------------------------------
 # Speciality
 --------------------------------------------------------------*/
-.hb-list .post {
+.hb-list > article {
   display: grid;
   gap: 0px 25px;
   grid-template-columns: 260px auto;
@@ -1034,18 +1090,18 @@ object {
   background-color: #e5e5e5;
   height: 260px;
   overflow: hidden; }
-  .hb-list .post header {
+  .hb-list > article header {
     grid-area: post-header; }
-    .hb-list .post header .entry-title {
+    .hb-list > article header .entry-title {
       margin: 25px 25px 10px 0;
       font-size: 1.9em;
       line-height: 1em; }
-    .hb-list .post header .entry-meta {
+    .hb-list > article header .entry-meta {
       font-family: "Lato", sans-serif;
       font-size: 0.8em; }
-      .hb-list .post header .entry-meta a {
+      .hb-list > article header .entry-meta a {
         font-weight: 700; }
-  .hb-list .post .post-thumbnail {
+  .hb-list > article .post-thumbnail {
     background-position: center center;
     background-color: #efefef;
     grid-area: post-thumbnail;
@@ -1057,7 +1113,7 @@ object {
     height: 260px;
     width: 260px;
     margin: 0; }
-    .hb-list .post .post-thumbnail .post-thumbnail-decal {
+    .hb-list > article .post-thumbnail .post-thumbnail-decal {
       clip-path: polygon(0 21%, 100% 0, 100% 100%, 17% 92%, 67% 75%, 0 67%, 65% 41%);
       background-color: #e5e5e5;
       pointer-events: none;
@@ -1066,38 +1122,38 @@ object {
       display: block;
       height: 260px;
       width: 12px; }
-    .hb-list .post .post-thumbnail.password-protected {
+    .hb-list > article .post-thumbnail.password-protected {
       background-image: url(assets/secure.svg);
       background-repeat: no-repeat;
       background-size: 100px;
       background-color: #d8d0e0; }
-  .hb-list .post .entry-content {
+  .hb-list > article .entry-content {
     grid-area: post-summary;
     font-family: "Noto Serif", serif;
     margin: 0 25px 0 0; }
-  .hb-list .post .entry-content > * {
+  .hb-list > article .entry-content > * {
     margin: 0; }
-  .hb-list .post footer {
+  .hb-list > article footer {
     grid-area: post-footer;
     margin: 0 25px 0 0;
     display: flex;
     align-items: center; }
-    .hb-list .post footer a {
+    .hb-list > article footer a {
       text-decoration: none; }
-    .hb-list .post footer .cat-links, .hb-list .post footer .tags-links, .hb-list .post footer .comments-link {
+    .hb-list > article footer .cat-links, .hb-list > article footer .tags-links, .hb-list > article footer .comments-link {
       display: flex;
       align-items: center;
       margin-right: 10px;
       flex-wrap: wrap; }
-    .hb-list .post footer .cat-img, .hb-list .post footer .tag-img, .hb-list .post footer .comment-img {
+    .hb-list > article footer .cat-img, .hb-list > article footer .tag-img, .hb-list > article footer .comment-img {
       background-image: url(assets/cat.svg);
       opacity: 0.6;
       display: inline-block;
       width: 24px;
       height: 24px; }
-    .hb-list .post footer .tag-img {
+    .hb-list > article footer .tag-img {
       background-image: url(assets/tag.svg); }
-    .hb-list .post footer .comment-img {
+    .hb-list > article footer .comment-img {
       background-image: url(assets/comment.svg);
       opacity: 0.4;
       width: 23px;

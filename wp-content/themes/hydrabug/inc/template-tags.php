@@ -137,7 +137,7 @@ if ( ! function_exists( 'hydrabug_post_thumbnail' ) ) :
 			if (function_exists('z_taxonomy_image_url')):
 				$categoryUrl = z_taxonomy_image_url($category->term_id);
 		?>
-			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true"
+			<a class="post-thumbnail no-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true"
 				tabindex="-1" style="background-image:url(<?php echo $categoryUrl; ?>)">
 				<div class="post-thumbnail-decal"></div>
 				<?php
