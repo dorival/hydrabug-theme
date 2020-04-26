@@ -1,10 +1,11 @@
 .site-header {
-  height: 200px;
+  height: auto;
 
   .site-branding {
     height: 90px;
     width: 100%;
-    background-color: $color__header-footer;   
+    background-color: $color__header-footer;
+
     .sb-inner {
       display: flex;
       margin: 0 auto;
@@ -12,9 +13,9 @@
       padding: $size__site-padding;
 
       .site-mascot {
+        display: none;
         margin-right: 25px;
         background-size: 179px;
-        display: block;
         height: 161px;
         width: 179px;
       }
@@ -39,4 +40,18 @@
     }
   }
 
+}
+
+@media screen and (min-width: 37.5em) {
+  .site-header {
+    height: 200px;
+
+    .site-branding {
+      .sb-inner {
+        .site-mascot {
+          display: block;
+        }
+      }
+    }
+  }
 }

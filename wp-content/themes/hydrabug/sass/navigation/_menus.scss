@@ -2,12 +2,12 @@
 	display: block;
 	margin: 0 auto;
 	max-width: $size__site-maxwidth;
-	padding: 0 25px 0 25px;
+	padding: 0;
 
 	> div > ul {
-		> li > a, > li > a:visited { color: $color__mainnav-level0; }
+		> li > a, > li > a:visited { color: #fff }
 		> li > a:hover {
-			color: $color__mainnav-level0-hover;
+			color: #fff;
 			text-decoration: underline;
 		}
 	}
@@ -19,7 +19,6 @@
 		font-family: $font__main;
 		font-weight: 700;
 		font-size: 1.1em;
-		height: 50px;
 		margin: 0;
 
 		ul {
@@ -71,6 +70,8 @@
 
 	li {
 		position: relative;
+		padding: 10px 20px;
+		background-color: #444444;
 
 		&:hover > a,
 		&.focus > a {
@@ -93,13 +94,35 @@
 }
 
 .main-navigation.has-header-image {
-	padding: 0 25px 0 225px;
+	padding: 0;
 }
 
 /* Small menu. */
+.menu-toggle {
+	background-image: url(assets/hamburger.svg);
+	background-color: #303030;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 40px;
+	display: block;
+	position: absolute;
+	z-index: 9999;
+	top: 25px;
+	right: 20px;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+}
+
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+}
+
+body.admin-bar {
+	.menu-toggle {
+		top: 70px;
+	}
 }
 
 @media screen and (min-width: 37.5em) {
@@ -108,26 +131,53 @@
 		display: none;
 	}
 
-	.main-navigation ul {
-		display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-	}
-	.main-navigation ul.children {
-		flex-direction: column;
+	.main-navigation {
+		display: block;
+		margin: 0 auto;
+		max-width: $size__site-maxwidth;
+		padding: 0 25px 0 25px;
+
+		> div > ul {
+			> li > a, > li > a:visited { color: $color__mainnav-level0; }
+			> li > a:hover {
+				color: $color__mainnav-level0-hover;
+				text-decoration: underline;
+			}
+		}
+
+		ul {
+			justify-content: space-between;
+			align-items: center;
+			display: flex;
+			width: 100%;
+			height: 50px;
+		}
+		ul.children {
+			flex-direction: column;
+	
+			li {
+				background-color: $color__header-footer;
+				padding: 10px 20px 10px 20px;
+			}
+			li:first-of-type {
+				padding: 20px 20px 10px 20px;
+			}
+			li:last-of-type {
+				padding: 10px 20px 20px 20px;
+			}
+		}
 
 		li {
-			background-color: $color__header-footer;
-			padding: 10px 20px 10px 20px;
-		}
-		li:first-of-type {
-			padding: 20px 20px 10px 20px;
-		}
-		li:last-of-type {
-			padding: 10px 20px 20px 20px;
+			padding: initial;
+			background-color: transparent;
 		}
 	}
+
+
+	.main-navigation.has-header-image {
+		padding: 0 25px 0 225px;
+	}
+
 }
 
 .comment-navigation,

@@ -400,6 +400,10 @@ big {
 *::after {
   box-sizing: inherit; }
 
+html,
+body {
+  min-width: auto; }
+
 html {
   box-sizing: border-box; }
 
@@ -465,6 +469,10 @@ table {
   .wp-block-file .wp-block-file__button {
     font-family: "Lato", sans-serif;
     line-height: 1.5; }
+
+@media screen and (min-width: 37.5em) {
+  html, body {
+    min-width: 1024px; } }
 
 /*--------------------------------------------------------------
 # Forms
@@ -548,7 +556,7 @@ form[role="search"] {
 ## Header
 --------------------------------------------------------------*/
 .site-header {
-  height: 200px; }
+  height: auto; }
   .site-header .site-branding {
     height: 90px;
     width: 100%;
@@ -559,9 +567,9 @@ form[role="search"] {
       max-width: 1390px;
       padding: 0 25px; }
       .site-header .site-branding .sb-inner .site-mascot {
+        display: none;
         margin-right: 25px;
         background-size: 179px;
-        display: block;
         height: 161px;
         width: 179px; }
       .site-header .site-branding .sb-inner .site-logo {
@@ -576,6 +584,12 @@ form[role="search"] {
           font-size: 0.9em;
           margin: 0;
           color: #ccc; }
+
+@media screen and (min-width: 37.5em) {
+  .site-header {
+    height: 200px; }
+    .site-header .site-branding .sb-inner .site-mascot {
+      display: block; } }
 
 /*--------------------------------------------------------------
 ## Footer
@@ -615,11 +629,11 @@ h1 > a, h2 > a {
   display: block;
   margin: 0 auto;
   max-width: 1390px;
-  padding: 0 25px 0 25px; }
+  padding: 0; }
   .main-navigation > div > ul > li > a, .main-navigation > div > ul > li > a:visited {
-    color: #7e7e7e; }
+    color: #fff; }
   .main-navigation > div > ul > li > a:hover {
-    color: #b8312a;
+    color: #fff;
     text-decoration: underline; }
   .main-navigation ul {
     display: none;
@@ -628,7 +642,6 @@ h1 > a, h2 > a {
     font-family: "Lato", sans-serif;
     font-weight: 700;
     font-size: 1.1em;
-    height: 50px;
     margin: 0; }
     .main-navigation ul ul {
       background-color: #303030;
@@ -660,7 +673,9 @@ h1 > a, h2 > a {
     .main-navigation ul li.focus > ul {
       left: auto; }
   .main-navigation li {
-    position: relative; }
+    position: relative;
+    padding: 10px 20px;
+    background-color: #444444; }
   .main-navigation a {
     display: block;
     text-decoration: none;
@@ -673,30 +688,64 @@ h1 > a, h2 > a {
     text-decoration: underline; }
 
 .main-navigation.has-header-image {
-  padding: 0 25px 0 225px; }
+  padding: 0; }
 
 /* Small menu. */
+.menu-toggle {
+  background-image: url(assets/hamburger.svg);
+  background-color: #303030;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 40px;
+  display: block;
+  position: absolute;
+  z-index: 9999;
+  top: 25px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  padding: 0; }
+
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block; }
 
+body.admin-bar .menu-toggle {
+  top: 70px; }
+
 @media screen and (min-width: 37.5em) {
   .menu-toggle {
     display: none; }
-  .main-navigation ul {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between; }
-  .main-navigation ul.children {
-    flex-direction: column; }
-    .main-navigation ul.children li {
-      background-color: #303030;
-      padding: 10px 20px 10px 20px; }
-    .main-navigation ul.children li:first-of-type {
-      padding: 20px 20px 10px 20px; }
-    .main-navigation ul.children li:last-of-type {
-      padding: 10px 20px 20px 20px; } }
+  .main-navigation {
+    display: block;
+    margin: 0 auto;
+    max-width: 1390px;
+    padding: 0 25px 0 25px; }
+    .main-navigation > div > ul > li > a, .main-navigation > div > ul > li > a:visited {
+      color: #7e7e7e; }
+    .main-navigation > div > ul > li > a:hover {
+      color: #b8312a;
+      text-decoration: underline; }
+    .main-navigation ul {
+      justify-content: space-between;
+      align-items: center;
+      display: flex;
+      width: 100%;
+      height: 50px; }
+    .main-navigation ul.children {
+      flex-direction: column; }
+      .main-navigation ul.children li {
+        background-color: #303030;
+        padding: 10px 20px 10px 20px; }
+      .main-navigation ul.children li:first-of-type {
+        padding: 20px 20px 10px 20px; }
+      .main-navigation ul.children li:last-of-type {
+        padding: 10px 20px 20px 20px; }
+    .main-navigation li {
+      padding: initial;
+      background-color: transparent; }
+  .main-navigation.has-header-image {
+    padding: 0 25px 0 225px; } }
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
@@ -862,15 +911,30 @@ h1 > a, h2 > a {
   display: flex;
   margin: 0 auto;
   max-width: 1390px;
-  padding: 0 25px; }
+  padding: 25px 25px 0 25px;
+  flex-direction: column; }
   .site-main > .content {
     flex: 1;
     overflow: hidden;
-    /* TODO: REMOVE */
-    margin-right: 50px; }
+    margin-right: 0; }
   .site-main > .widget-area {
     flex: none;
     width: 250px; }
+
+@media screen and (min-width: 37.5em) {
+  .site-main {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1390px;
+    padding: 0 25px;
+    flex-direction: row; }
+    .site-main > .content {
+      flex: 1;
+      overflow: hidden;
+      margin-right: 50px; }
+    .site-main > .widget-area {
+      flex: none;
+      width: 250px; } }
 
 /*--------------------------------------------------------------
 ## Posts and pages
@@ -1143,25 +1207,26 @@ object {
 .hb-list > article {
   display: grid;
   gap: 0px 25px;
-  grid-template-columns: 260px auto;
-  grid-template-rows: auto auto 50px;
-  grid-template-areas: "post-thumbnail post-header" "post-thumbnail post-summary" "post-thumbnail post-footer";
-  margin: 0 0 50px;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  grid-template-areas: "post-header" "post-summary";
+  margin: 0 0 15px;
   background-color: #e5e5e5;
-  height: 260px;
   overflow: hidden; }
   .hb-list > article header {
     grid-area: post-header; }
     .hb-list > article header .entry-title {
-      margin: 25px 25px 10px 0;
-      font-size: 1.9em;
+      margin: 15px;
+      font-size: 1.5em;
       line-height: 1em; }
     .hb-list > article header .entry-meta {
       font-family: "Lato", sans-serif;
-      font-size: 0.8em; }
+      font-size: 0.8em;
+      margin: 0 15px; }
       .hb-list > article header .entry-meta a {
         font-weight: 700; }
   .hb-list > article .post-thumbnail {
+    display: none;
     background-position: center center;
     background-color: #efefef;
     grid-area: post-thumbnail;
@@ -1190,30 +1255,30 @@ object {
   .hb-list > article .entry-content {
     grid-area: post-summary;
     font-family: "Noto Serif", serif;
-    margin: 0 25px 0 0; }
+    margin: 15px; }
   .hb-list > article .entry-content > * {
     margin: 0; }
-  .hb-list > article footer {
+  .hb-list > article .entry-footer {
+    display: none;
     grid-area: post-footer;
     margin: 0 25px 0 0;
-    display: flex;
     align-items: center; }
-    .hb-list > article footer a {
+    .hb-list > article .entry-footer a {
       text-decoration: none; }
-    .hb-list > article footer .cat-links, .hb-list > article footer .tags-links, .hb-list > article footer .comments-link {
+    .hb-list > article .entry-footer .cat-links, .hb-list > article .entry-footer .tags-links, .hb-list > article .entry-footer .comments-link {
       display: flex;
       align-items: center;
       margin-right: 10px;
       flex-wrap: wrap; }
-    .hb-list > article footer .cat-img, .hb-list > article footer .tag-img, .hb-list > article footer .comment-img {
+    .hb-list > article .entry-footer .cat-img, .hb-list > article .entry-footer .tag-img, .hb-list > article .entry-footer .comment-img {
       background-image: url(assets/cat.svg);
       opacity: 0.6;
       display: inline-block;
       width: 24px;
       height: 24px; }
-    .hb-list > article footer .tag-img {
+    .hb-list > article .entry-footer .tag-img {
       background-image: url(assets/tag.svg); }
-    .hb-list > article footer .comment-img {
+    .hb-list > article .entry-footer .comment-img {
       background-image: url(assets/comment.svg);
       opacity: 0.4;
       width: 23px;
@@ -1221,3 +1286,24 @@ object {
       background-repeat: no-repeat;
       background-position: 4px 6px;
       background-size: 15px; }
+
+@media screen and (min-width: 37.5em) {
+  .hb-list > article {
+    display: grid;
+    gap: 0px 25px;
+    grid-template-columns: 260px auto;
+    grid-template-rows: auto auto 50px;
+    grid-template-areas: "post-thumbnail post-header" "post-thumbnail post-summary" "post-thumbnail post-footer";
+    margin: 0 0 50px;
+    height: 260px; }
+    .hb-list > article .post-thumbnail {
+      display: initial; }
+    .hb-list > article .entry-footer {
+      display: flex; }
+    .hb-list > article .entry-content {
+      margin: 0 25px 0 0; }
+    .hb-list > article header .entry-title {
+      margin: 25px 25px 10px 0;
+      font-size: 1.9em; }
+    .hb-list > article header .entry-meta {
+      margin: 0; } }

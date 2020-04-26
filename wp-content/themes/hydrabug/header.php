@@ -85,8 +85,8 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation <?php echo has_header_image() ? 'has-header-image' : '' ?>">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-				<?php esc_html_e( 'Primary Menu', 'hydrabug' ); ?>
+			<button class="menu-toggle" aria-controls="primary-menu"
+				aria-expanded="false" aria-label="<?php esc_html_e( 'Primary Menu', 'hydrabug' ); ?>">
 			</button>
 			<?php
 			wp_nav_menu(

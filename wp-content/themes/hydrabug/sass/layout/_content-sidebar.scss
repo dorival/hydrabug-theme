@@ -3,12 +3,13 @@
 	display: flex;
 	margin: 0 auto;
 	max-width: $size__site-maxwidth;
-	padding: $size__site-padding;
+	padding: 25px 25px 0 25px;
+	flex-direction: column;
 
 	> .content {
 		flex: 1;
-		overflow: hidden;  /* TODO: REMOVE */
-		margin-right: $size__site-gutter;
+		overflow: hidden;
+		margin-right: 0;
 	}
 
 	> .widget-area {
@@ -17,33 +18,24 @@
 	}
 }
 
+@media screen and (min-width: 37.5em) {
 
-
-
-// .site {
-// 	display: grid;
-// 	grid-template-columns: auto ($size__site-sidebar);
-// 	grid-template-areas:
-// 		"header header"
-// 		"main sidebar"
-// 		"footer footer";
-// }
-
-// .site-header {
-// 	grid-area: header;
-// }
-
-// .site-main {
-// 	grid-area: main;
-// 	overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
-// }
-
-// .widget-area {
-// 	grid-area: sidebar;
-// }
-
-// .site-footer {
-// 	grid-area: footer;
-// }
-
-// @import "no-sidebar";
+	.site-main {
+		display: flex;
+		margin: 0 auto;
+		max-width: $size__site-maxwidth;
+		padding: $size__site-padding;
+		flex-direction: row;
+	
+		> .content {
+			flex: 1;
+			overflow: hidden;
+			margin-right: $size__site-gutter;
+		}
+	
+		> .widget-area {
+			flex: none;
+			width: 250px;
+		}
+	}
+}
