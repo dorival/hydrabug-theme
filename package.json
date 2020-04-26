@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass --watch wp-content/themes/hydrabug/sass -o wp-content/themes/hydrabug"
+    "scss": "node-sass --watch wp-content/themes/hydrabug/sass -o wp-content/themes/hydrabug",
+    "build-scss": "node-sass --output-style compressed --watch wp-content/themes/hydrabug/sass -o wp-content/themes/hydrabug"
   },
   "repository": {
     "type": "git",
