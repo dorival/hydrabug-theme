@@ -22,7 +22,7 @@
 			<div class="sep">&#10714;</div>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s', 'hydrabug' ), 'hydrabug', '<a href="https://github.com/dorival/hydrabug-theme">Dorival Neto</a>' );
+				printf( esc_html__( '%1$s theme by %2$s', 'hydrabug' ), 'HydraBug', '<a href="https://github.com/dorival/hydrabug-theme">Dorival Neto</a>' );
 				?>
 			<div class="sep">&#10714;</div>
 			<?php

@@ -15,6 +15,7 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#303030"/>
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 	<style>
@@ -52,7 +53,7 @@
 			<div class="sb-inner">
 
 				<?php if ( has_header_image() ) : ?>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-mascot"></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-hidden="true" rel="home" class="site-mascot hide-text">Logo</a>
 				<?php	endif; ?>
 
 				<div class="site-logo">
@@ -60,16 +61,16 @@
 				if ( is_front_page() && is_home() ) :
 					?>
 					<h1 class="site-title">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<?php has_custom_logo() ? '' : bloginfo( 'name' ); ?>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="<?php echo has_custom_logo() ? 'hide-text' : '' ?>">
+							<?php bloginfo( 'name' ); ?>
 						</a>
 					</h1>
 					<?php
 				else :
 					?>
 					<p class="site-title">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<?php has_custom_logo() ? '' : bloginfo( 'name' ); ?>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="<?php echo has_custom_logo() ? 'hide-text' : '' ?>">
+							<?php bloginfo( 'name' ); ?>
 						</a>
 					</p>
 					<?php

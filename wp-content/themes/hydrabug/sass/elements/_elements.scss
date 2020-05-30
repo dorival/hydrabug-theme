@@ -8,15 +8,12 @@
 
 html,
 body {
+	background-color: $color-reverse;
 	min-width: auto;
 }
 
 html {
 	box-sizing: border-box;
-}
-
-body {
-	background: $color-body; // Fallback for when there is no custom background color defined.
 }
 
 hr {

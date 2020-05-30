@@ -2,6 +2,14 @@ footer.site-footer {
  background-color: $color__header-footer;
  margin-top: 3em;
 
+ a, a:hover {
+   color: #ffae9f;
+   text-decoration: none;
+ }
+ a:hover {
+   text-decoration: underline;
+ }
+
  .site-info {
   margin: 0 auto;
   max-width: $size__site-maxwidth;
