@@ -146,6 +146,8 @@ function hydrabug_scripts() {
 	wp_enqueue_style( 'hydrabug-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'hydrabug-style', 'rtl', 'replace' );
 
+	wp_enqueue_script( 'hydrabug-main', get_template_directory_uri() . '/js/hb.js', array(), _S_VERSION, true );
+
 	wp_enqueue_script( 'hydrabug-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	wp_enqueue_script( 'hydrabug-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true );
