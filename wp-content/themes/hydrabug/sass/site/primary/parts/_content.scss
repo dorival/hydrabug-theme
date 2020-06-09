@@ -1,0 +1,31 @@
+/*--------------------------------------------------------------
+## Author Bio
+--------------------------------------------------------------*/
+#about-author {
+  width: 100%;
+  height: 199px;
+  display: block;
+  position: relative;
+  overflow: auto;
+
+  .author-img {
+    background-image: url(assets/author.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    position: absolute;
+    height: 199px;
+    width: 100%;
+    display: block;
+  }
+
+  .author-bio {
+    width: 100%;
+    background-color: $color-primary;
+    color: $color-reverse;
+    padding: 24px 148px 24px 24px;
+    margin: 71px 0 0 0;
+    height: 128px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

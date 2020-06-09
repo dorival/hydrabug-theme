@@ -23,7 +23,7 @@
 			<div class="entry-meta">
 				<?php
 				hydrabug_posted_on();
-				hydrabug_posted_by();
+				hydrabug_posted_in(' &bull; ');
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
@@ -65,7 +65,17 @@
 		?>
 	</div><!-- .entry-content -->
 
+	<?php if (is_singular() ) : ?>
 	<footer class="entry-footer">
 		<?php hydrabug_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+
+	<section id="about-author">
+		<div class="author-img"></div>
+		<div class="author-bio">
+			<?php the_author_meta( 'description' ); ?>
+		</div>
+	</section>
+
+	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
