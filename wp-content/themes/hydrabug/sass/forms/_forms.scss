@@ -1,2 +1,12 @@
 @import "buttons";
 @import "fields";
+
+
+form[role="search"] {
+  display: flex;
+
+  .search-field {
+    width: 100%;
+    border-color: #fff;
+  }
+}

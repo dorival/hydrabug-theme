@@ -6,12 +6,14 @@
 	box-sizing: inherit;
 }
 
-html {
-	box-sizing: border-box;
+html,
+body {
+	background-color: $color-reverse;
+	min-width: auto;
 }
 
-body {
-	background: $color__background-body; // Fallback for when there is no custom background color defined.
+html {
+	box-sizing: border-box;
 }
 
 hr {
@@ -21,7 +23,7 @@ hr {
 	margin-bottom: 1.5em;
 }
 
-@import "lists";
+@import "definitions";
 
 img {
 	height: auto; // Make sure images are scaled correctly.
@@ -33,3 +35,12 @@ figure {
 }
 
 @import "tables";
+
+@import "embeds";
+
+
+@media screen and (min-width: 37.5em) {
+	html, body {
+		min-width: 1024px;
+	}
+}

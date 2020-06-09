@@ -1,0 +1,41 @@
+.wp-block-embed__wrapper {
+
+  // Twitter
+  .twitter-tweet {
+    background-color: $color-primary;
+    font-style: italic;
+    padding: 1.5em;
+    margin: 1em 1.5em;
+
+    > p {
+      font-style: normal;
+      margin-top: 0;
+      background-image: url(assets/twitter.svg);
+      padding-left: 5.5em;
+      background-repeat: no-repeat;
+      background-position: top left;
+      background-size: 4.5em;
+    }
+  }
+}
+
+// Spotify
+.wp-block-embed-spotify {
+  margin: 1em 1.5em;
+
+  iframe {
+    height: 80px;
+    width: 100%;
+  }
+}
+
+// File
+.wp-block-file {
+  margin: 1em 1.5em;
+  padding: 1.5em;
+  background-color: $color-primary;
+
+  .wp-block-file__button {
+    @include sans-serif-mix();
+  }
+}

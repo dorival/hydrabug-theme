@@ -1,17 +1,50 @@
-$color__background-body: #fff;
-$color__background-screen: #f1f1f1;
+/*--------------------------------------------------------------
+# BASE COLOURS
+--------------------------------------------------------------*/
+
+// PRIMARY
+$color-primary: #e5e5e5;
+$color-primary-light: #efefef;
+$color-primary-dark: #babdbe;
+$color-primary-text: #303030;   // $color__text-main    $color__header-footer
+
+// ACCENT
+$color-accent: #d50000;
+$color-accent-light: #ff5131;
+$color-accent-dark: #9b0000;
+$color-accent-text: #fff;
+
+// PRIMARY REVERSE
+$color-reverse: #303030;
+$color-reverse-light: #595959;
+$color-reverse-dark: #303030;
+$color-reverse-text: #eceff1;
+
+// OTHER
+$color-body: #f7f7f7;
+$color-screen: #fff;
+
+// ------------------------- Roll out this
+
+
 $color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: #4169e1; //royalblue
-$color__link-visited: #800080; //purple
-$color__link-hover: #191970; //midnightblue
-$color__text-main: #404040;
+
+$color__mainnav-level0: #616161;
+$color__mainnav-level0-hover: #b8312a;
+
+$color__link: #b8312a;
+$color__link-visited: #b8312a;
+$color__link-hover: #d73d35;
+
+
+$color__text-main: #303030;
+$color__header-footer: #303030;
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;

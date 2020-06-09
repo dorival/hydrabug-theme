@@ -1,0 +1,57 @@
+.site-header {
+  height: auto;
+
+  .site-branding {
+    height: 90px;
+    width: 100%;
+    background-color: $color__header-footer;
+
+    .sb-inner {
+      display: flex;
+      margin: 0 auto;
+      max-width: $size__site-maxwidth;
+      padding: $size__site-padding;
+
+      .site-mascot {
+        display: none;
+        margin-right: 25px;
+        background-size: 179px;
+        height: 161px;
+        width: 179px;
+      }
+      
+      .site-logo {
+        height: 90px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .site-title {
+          margin: 0;
+        }
+  
+        .site-description {
+          font-family: $font__main;
+          font-size: 0.9em;
+          margin: 0;
+          color: #ccc;
+        }
+      }
+    }
+  }
+
+}
+
+@media screen and (min-width: 37.5em) {
+  .site-header {
+    height: 200px;
+
+    .site-branding {
+      .sb-inner {
+        .site-mascot {
+          display: block;
+        }
+      }
+    }
+  }
+}

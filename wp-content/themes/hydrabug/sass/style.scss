@@ -1,6 +1,6 @@
 /*!
 Theme Name: HydraBug
-Theme URI: http://underscores.me/
+Theme URI: https://hydrabug.dev/
 Author: Dorival Neto
 Author URI: https://github.com/dorival
 Description: HydraBug.dev Blog Theme
@@ -40,7 +40,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Media
 	## Captions
 	## Galleries
---------------------------------------------------------------*/
+*/
+
+/*-------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
 
@@ -82,7 +84,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-@import "site/secondary/widgets";
+@import "modules/widget";
 
 /*--------------------------------------------------------------
 # Content
@@ -98,3 +100,16 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Media
 --------------------------------------------------------------*/
 @import "media/media";
+
+/*--------------------------------------------------------------
+# Speciality
+--------------------------------------------------------------*/
+@import "modules/article-row";
+
+/*--------------------------------------------------------------
+# Util
+--------------------------------------------------------------*/
+// Hide text, but keep readable for screen readers
+.hide-text {
+	text-indent: -10000px;
+}

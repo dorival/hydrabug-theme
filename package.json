@@ -1,0 +1,29 @@
+{
+  "name": "hydrabug-theme",
+  "version": "1.0.0",
+  "description": "A wordpress theme based on _s",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch wp-content/themes/hydrabug/sass -o wp-content/themes/hydrabug",
+    "build-scss": "node-sass --output-style compressed --watch wp-content/themes/hydrabug/sass -o wp-content/themes/hydrabug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dorival/hydrabug-theme.git"
+  },
+  "keywords": [
+    "wordpress-theme",
+    "wordpress",
+    "docker-compose"
+  ],
+  "author": "Dorival Neto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dorival/hydrabug-theme/issues"
+  },
+  "homepage": "https://github.com/dorival/hydrabug-theme#readme",
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  }
+}

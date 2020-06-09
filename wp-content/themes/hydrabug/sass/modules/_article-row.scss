@@ -1,0 +1,125 @@
+.hb-list {
+  > article {
+    display: grid;
+    gap: 0px 25px;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+      "post-header"
+      "post-summary";
+
+    margin: 0 0 15px;
+    background-color: $color-primary;
+    overflow: hidden;
+
+    header {
+      grid-area: post-header;
+      
+      .entry-title {
+        margin: 15px;
+        font-size: 1.5em;
+        line-height: 1em;
+      }
+      .entry-meta {
+        font-family: $font-sans-serif;
+        font-size: 0.8em;
+        margin: 0 15px;
+
+        a {
+          font-weight: 700;
+        }
+      }
+    }
+
+    .post-thumbnail {
+      display: none;
+      background-position: center center;
+      background-color: $color-primary-light;
+      grid-area: post-thumbnail;
+      font-size: 10em;
+      font-weight: 700;
+      text-decoration: none;
+      text-align: center;
+      color: #d6d6d6;
+      height: 260px;
+      width: 260px;
+      margin: 0;
+
+      .post-thumbnail-decal {
+        clip-path: polygon(0 21%, 100% 0, 100% 100%, 17% 92%, 67% 75%, 0 67%, 65% 41%);
+        background-color: $color-primary;
+        pointer-events: none;
+        margin-left: 249px;
+        position: absolute;
+        display: block;
+        height: 260px;
+        width: 12px;
+      }
+
+      &.password-protected {
+        background-image: url(assets/secure.svg);
+        background-repeat: no-repeat;
+        background-size: 100px;
+        background-color: #d8d0e0;
+      }
+    }
+
+    .entry-content {
+      grid-area: post-summary;
+      font-family: $font__secondary;
+      margin: 15px;
+    }
+
+    .entry-content > * {
+      margin: 0;
+    }
+  }
+
+}
+
+// Big screen
+@media screen and (min-width: 37.5em) {
+  .hb-list {
+
+    > article {
+      display: grid;
+      gap: 0px 25px;
+      grid-template-columns: 260px auto;
+      grid-template-rows: 100px 160px;
+      grid-template-areas: 
+        "post-thumbnail post-header"
+        "post-thumbnail post-summary";
+      margin: 0 0 $size__site-gutter;
+      height: 260px;
+
+      .post-thumbnail {
+        display: initial;
+      }
+
+      .entry-footer {
+        display: flex;
+      }
+
+      .entry-content {
+        margin: 0 25px 0 0;
+        > p {
+          height: 146px;
+          overflow: hidden;
+          font-size: 0.9rem;
+        }
+      }
+
+      header {
+        .entry-title {
+          margin: 25px 25px 10px 0;
+          font-size: 1.2em;
+        }
+        .entry-meta {
+          margin: 0;
+        }
+      }
+    }
+    
+
+  }
+}

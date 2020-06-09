@@ -15,9 +15,32 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#303030"/>
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-
 	<?php wp_head(); ?>
+	<style>
+	<?php
+		if ( has_custom_logo() ) :
+			$custom_logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
+	?>
+		.site-title a{
+			background-image: url(<?php echo esc_url( $custom_logo[0] ); ?>);
+			background-size: <?php echo absint( $custom_logo[1] ) ?>px;
+			display: block;
+			height: <?php echo absint( $custom_logo[2] ) ?>px;
+			width: <?php echo absint( $custom_logo[1] ) ?>px;
+		}
+	<?php endif; ?>
+
+	<?php
+		if ( has_header_image() ) :
+			$custom_header = get_header_image();
+	?>
+		.site-mascot{
+			background-image: url(<?php echo $custom_header ?>);
+		}
+	<?php endif; ?>
+	</style>
 </head>
 
 <body <?php body_class(); ?>>
@@ -27,31 +50,50 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<div class="sb-inner">
+
+				<?php if ( has_header_image() ) : ?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-hidden="true" rel="home" class="site-mascot hide-text">Logo</a>
+				<?php	endif; ?>
+
+				<div class="site-logo">
 				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$hydrabug_description = get_bloginfo( 'description', 'display' );
-			if ( $hydrabug_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $hydrabug_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
+				if ( is_front_page() && is_home() ) :
+					?>
+					<h1 class="site-title">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="<?php echo has_custom_logo() ? 'hide-text' : '' ?>">
+							<?php bloginfo( 'name' ); ?>
+						</a>
+					</h1>
+					<?php
+				else :
+					?>
+					<p class="site-title">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="<?php echo has_custom_logo() ? 'hide-text' : '' ?>">
+							<?php bloginfo( 'name' ); ?>
+						</a>
+					</p>
+					<?php
+				endif;
+				$hydrabug_description = get_bloginfo( 'description', 'display' );
+				if ( $hydrabug_description || is_customize_preview() ) :
+					?>
+				<?php endif; ?>
+					<p class="site-description"><?php echo $hydrabug_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+				</div>
+				
+			</div>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'hydrabug' ); ?></button>
+		<nav id="site-navigation" class="main-navigation <?php echo has_header_image() ? 'has-header-image' : '' ?>">
+			<button class="menu-toggle" aria-controls="primary-menu"
+				aria-expanded="false" aria-label="<?php esc_html_e( 'Primary Menu', 'hydrabug' ); ?>">
+			</button>
 			<?php
 			wp_nav_menu(
 				array(
 					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
+					'menu_id'        => 'primary-menu'
 				)
 			);
 			?>

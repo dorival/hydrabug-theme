@@ -1,0 +1,48 @@
+.not-found {
+
+  .page-content {
+    display: grid;
+    margin-bottom: 1.5em;
+    gap: 15px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2em auto 1fr 1fr;
+    grid-template-areas: 
+      "description description"
+      "search-form search-form"
+      "recent-posts popular-categories"
+      "archives tag-cloud";
+
+    > p {
+      grid-area: description;
+    }
+  
+    > .search-form {
+      grid-area: search-form;
+    }
+  
+    > .widget_recent_entries {
+      grid-area: recent-posts;
+    }
+  
+    > .widget_categories {
+      grid-area: popular-categories;
+    }
+  
+    > .widget_archive {
+      grid-area: archives;
+    }
+  
+    > .widget_tag_cloud {
+      grid-area: tag-cloud;
+    }
+
+    .widget {
+      background-color: $color-primary;
+      padding: 15px;
+
+      > h2 {
+        margin-top: 0;
+      }
+    }
+  }
+}

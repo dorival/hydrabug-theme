@@ -130,8 +130,8 @@ function hydrabug_widgets_init() {
 			'name'          => esc_html__( 'Sidebar', 'hydrabug' ),
 			'id'            => 'sidebar-1',
 			'description'   => esc_html__( 'Add widgets here.', 'hydrabug' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
+			'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="slant"></div><div class="widget-content">',
+			'after_widget'  => '</div></section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 		)
@@ -145,6 +145,8 @@ add_action( 'widgets_init', 'hydrabug_widgets_init' );
 function hydrabug_scripts() {
 	wp_enqueue_style( 'hydrabug-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'hydrabug-style', 'rtl', 'replace' );
+
+	wp_enqueue_script( 'hydrabug-main', get_template_directory_uri() . '/js/hb.js', array(), _S_VERSION, true );
 
 	wp_enqueue_script( 'hydrabug-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 

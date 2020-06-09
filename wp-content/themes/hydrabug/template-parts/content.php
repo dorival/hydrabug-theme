@@ -23,7 +23,7 @@
 			<div class="entry-meta">
 				<?php
 				hydrabug_posted_on();
-				hydrabug_posted_by();
+				hydrabug_posted_in(' &bull; ');
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
@@ -33,31 +33,49 @@
 
 	<div class="entry-content">
 		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'hydrabug' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
+		if (is_singular() ) :
 
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'hydrabug' ),
-				'after'  => '</div>',
-			)
-		);
+			the_content(
+				sprintf(
+					wp_kses(
+						/* translators: %s: Name of current post. Only visible to screen readers */
+						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'hydrabug' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					),
+					wp_kses_post( get_the_title() )
+				)
+			);
+
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'hydrabug' ),
+					'after'  => '</div>',
+				)
+			);
+
+		else :
+
+			the_excerpt();
+
+		endif;
 		?>
 	</div><!-- .entry-content -->
 
+	<?php if (is_singular() ) : ?>
 	<footer class="entry-footer">
 		<?php hydrabug_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+
+	<section id="about-author">
+		<div class="author-img"></div>
+		<div class="author-bio">
+			<?php the_author_meta( 'description' ); ?>
+		</div>
+	</section>
+
+	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
