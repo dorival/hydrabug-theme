@@ -20,7 +20,8 @@
 	
 	.comment-meta {
 		display: flex;
-		align-items: center;
+		align-items: start;
+    flex-direction: column;
 	}
 
 	.comment-author {
@@ -40,7 +41,8 @@
 	}
 
 	.comment-metadata {
-		font-size: 1em;
+		font-size: 0.7em;
+    margin-left: 45px;
 	}
 
 	.edit-link {
@@ -55,4 +57,24 @@
 
 .bypostauthor {
 	display: block;
+}
+
+
+// Big screen
+@media screen and (min-width: 37.5em) {
+
+	.comments-area {
+
+		.comment-meta {
+			align-items: center;
+    	flex-direction: row;
+		}
+
+		.comment-metadata {
+			font-size: 1em;
+			margin: 0;
+		}
+
+	}
+	
 }

@@ -7,6 +7,7 @@
   display: block;
   position: relative;
   overflow: auto;
+  display: none;
 
   .author-img {
     background-image: url(assets/author.png);
@@ -27,5 +28,11 @@
     height: 128px;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+}
+
+@media screen and (min-width: 37.5em) {
+  #about-author {
+    display: block;
   }
 }
