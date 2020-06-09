@@ -27,12 +27,29 @@ if ( ! function_exists( 'hydrabug_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'hydrabug' ), $time_string
+			esc_html_x( '%s', 'post date', 'hydrabug' ), $time_string
 		);
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
+endif;
+
+if ( ! function_exists( 'hydrabug_posted_in' ) ) :
+	/**
+	 * Prints HTML of categories the post is in
+	 */
+	 function hydrabug_posted_in($sectionSeparator = '', $separator = ',&nbsp;') {
+		if ( 'post' === get_post_type() ) {
+			$categories_list = get_the_category_list( esc_html__( $separator, 'hydrabug' ) );
+			if ( $categories_list ) {
+				/* translators: 1: list of categories. */
+				printf( esc_html__($sectionSeparator, 'hydrabug') ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				/* translators: used between list items, there is a space after the comma */
+				printf( '<span class="cat-links">'. $categories_list .'</span>' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			}
+		}
+	 }
 endif;
 
 if ( ! function_exists( 'hydrabug_posted_by' ) ) :
@@ -42,7 +59,7 @@ if ( ! function_exists( 'hydrabug_posted_by' ) ) :
 	function hydrabug_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'hydrabug' ),
+			esc_html_x( 'Posted by %s', 'post author', 'hydrabug' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
@@ -57,14 +74,7 @@ if ( ! function_exists( 'hydrabug_entry_footer' ) ) :
 	 */
 	function hydrabug_entry_footer() {
 		// Hide category and tag text for pages.
-		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ',&nbsp;', 'hydrabug' ) );
-			if ( $categories_list ) {
-				/* translators: 1: list of categories. */
-				printf( '<div class="cat-links"><div class="cat-img" title="' . esc_html__( 'Posted in', 'hydrabug' ) . '"></div>'. $categories_list .'</div>' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			}
-
+		if ( 'post' === get_post_type() ) {		
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ',&nbsp;', 'list item separator', 'hydrabug' ) );
 			if ( $tags_list ) {

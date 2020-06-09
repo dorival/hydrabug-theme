@@ -73,47 +73,6 @@
     .entry-content > * {
       margin: 0;
     }
-
-    .entry-footer {
-      display: none;
-      grid-area: post-footer;
-      margin: 0 25px 0 0;
-      align-items: center;
-
-      a {
-        text-decoration: none;
-      }
-
-      .cat-links, .tags-links, .comments-link {
-        display: flex;
-        align-items: center;
-        margin-right: 10px;
-        flex-wrap: wrap;
-      }
-
-      .cat-img, .tag-img, .comment-img  {
-        background-image: url(assets/cat.svg);
-        opacity: 0.6;
-        display: inline-block;
-        width: 24px;
-        height: 24px;
-      }
-
-      .tag-img {
-        background-image: url(assets/tag.svg);
-      }
-
-      .comment-img {
-        background-image: url(assets/comment.svg);
-        opacity: 0.4;
-        width: 23px;
-        height: 23px;
-        background-repeat: no-repeat;
-        background-position: 4px 6px;
-        background-size: 15px;
-      }
-    }
-
   }
 
 }
@@ -126,11 +85,10 @@
       display: grid;
       gap: 0px 25px;
       grid-template-columns: 260px auto;
-      grid-template-rows: auto auto 50px;
+      grid-template-rows: 100px 160px;
       grid-template-areas: 
         "post-thumbnail post-header"
-        "post-thumbnail post-summary"
-        "post-thumbnail post-footer";
+        "post-thumbnail post-summary";
       margin: 0 0 $size__site-gutter;
       height: 260px;
 
@@ -144,12 +102,17 @@
 
       .entry-content {
         margin: 0 25px 0 0;
+        > p {
+          height: 146px;
+          overflow: hidden;
+          font-size: 0.9rem;
+        }
       }
 
       header {
         .entry-title {
           margin: 25px 25px 10px 0;
-          font-size: 1.9em;
+          font-size: 1.2em;
         }
         .entry-meta {
           margin: 0;
