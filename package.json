@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/dorival/hydrabug-theme#readme",
   "devDependencies": {
-    "node-sass": "^4.13.1"
+    "node-sass": "^5.0.0"
   }
 }
